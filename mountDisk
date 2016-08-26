@@ -1,0 +1,6 @@
+#create a partition and mount a disk available
+fdisk -l
+mkdir /diskVol
+fdisk /dev/vdc
+mkfs.ext4 /dev/vdc1
+mount -t ext4 /dev/vdc1 /diskVol
