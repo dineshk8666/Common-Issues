@@ -1,0 +1,13 @@
+#To transfer or sync files from source to destination with specific requirement
+#Note: rscyn creats required folder structure during the file transfer to sync from source. We dont need to create any folder structure
+
+
+# Exludes files and folder you dont want to transfer and see the progress of transfer:
+rsync -avz --progress --exclude "config-history" --exclude "logs" --exclude "*builds" --exclude "*log" $PWD $DESTINATION-FOLDER
+
+# Exlude large-size files to transfer:
+rsync -avz --max-size "10M" --progress --exclude "logs" --exclude "*builds" --exclude "*log" $PWD $DESTINATION-FOLDER
+
+#Transfer only directory of max size 10Mb:
+
+rsync -av -d --max-size "10M" --progress --exclude "logs" --exclude "*builds" --exclude "*log" $PWD $DESTINATION-FOLDER
